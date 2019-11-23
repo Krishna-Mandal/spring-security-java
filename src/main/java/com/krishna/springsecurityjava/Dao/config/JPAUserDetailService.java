@@ -1,6 +1,6 @@
-package com.krishna.springsecurityjava.controller.config;
+package com.krishna.springsecurityjava.Dao.config;
 
-import com.krishna.springsecurityjava.controller.repo.UserRepository;
+import com.krishna.springsecurityjava.Dao.repo.UserRepository;
 import com.krishna.springsecurityjava.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

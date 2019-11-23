@@ -1,4 +1,4 @@
-package com.krishna.springsecurityjava.controller.repo;
+package com.krishna.springsecurityjava.Dao.repo;
 
 import com.krishna.springsecurityjava.models.User;
 import org.springframework.data.repository.CrudRepository;

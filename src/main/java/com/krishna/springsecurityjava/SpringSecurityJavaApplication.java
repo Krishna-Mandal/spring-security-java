@@ -1,6 +1,6 @@
 package com.krishna.springsecurityjava;
 
-import com.krishna.springsecurityjava.controller.repo.UserRepository;
+import com.krishna.springsecurityjava.Dao.repo.UserRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;

@@ -1,4 +1,4 @@
-package com.krishna.springsecurityjava.controller.config;
+package com.krishna.springsecurityjava.Dao.config;
 
 import com.krishna.springsecurityjava.models.User;
 import lombok.ToString;
