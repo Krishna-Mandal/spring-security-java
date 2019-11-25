@@ -1,4 +1,4 @@
-package com.krishna.springsecurityjava.Dao.config;
+package com.krishna.springsecurityjava.service.config;
 
 import com.krishna.springsecurityjava.models.User;
 import lombok.ToString;
@@ -65,8 +65,4 @@ public class JPAUserDetails implements UserDetails {
         return active;
     }
 
-//    @Override
-//    public String toString() {
-//        return ("[user : "+this.userName + ",password : " +this.password + " ]");
-//    }
 }

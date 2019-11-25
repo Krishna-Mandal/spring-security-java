@@ -1,5 +1,6 @@
-package com.krishna.springsecurityjava.Dao.config;
+package com.krishna.springsecurityjava.service.config;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -18,12 +19,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     UserDetailsService userDetailsService;
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(@NotNull HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/admin").hasRole("ADMIN")
                 .antMatchers("/user").hasAnyRole("ADMIN", "USER")
                 .antMatchers("/").permitAll()
+                .antMatchers("/h2_console/**").permitAll()
                 .and().formLogin();
+        http.csrf().disable();
+        http.headers().frameOptions().disable();
     }
 
     @Override

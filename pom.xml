@@ -31,7 +31,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -53,7 +52,6 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -66,9 +64,25 @@
 			<version>18.0.0</version>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.199</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -76,5 +90,26 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<spring.profiles.active>dev</spring.profiles.active>
+			</properties>
+		</profile>
+		<profile>
+			<id>test</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<spring.profiles.active>test</spring.profiles.active>
+			</properties>
+		</profile>
+	</profiles>
 
 </project>
