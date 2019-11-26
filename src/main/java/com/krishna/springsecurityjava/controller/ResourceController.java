@@ -1,6 +1,7 @@
 package com.krishna.springsecurityjava.controller;
 
 import com.krishna.springsecurityjava.models.User;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,14 +19,14 @@ public class ResourceController {
 
     @Secured({"ROLE_USER","ROLE_ADMIN"})
     @GetMapping(path = "/user")
-    public String user(@AuthenticationPrincipal UserDetails user) {
+    public String user(@NotNull @AuthenticationPrincipal UserDetails user) {
 
         return ("Welcome user : "+user.getUsername());
     }
 
     @Secured("ROLE_ADMIN")
     @GetMapping(path = "/admin")
-    public String admin(@AuthenticationPrincipal UserDetails user) {
+    public String admin(@NotNull @AuthenticationPrincipal UserDetails user) {
 
         return ("Welcome admin : "+user.getUsername());
     }
