@@ -2,11 +2,13 @@ package com.krishna.springsecurityjava;
 
 import com.krishna.springsecurityjava.Dao.repo.UserRepository;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackageClasses = UserRepository.class)
+@EnableAutoConfiguration
 public class SpringSecurityJavaApplication {
 
 	public static void main(String[] args) {
